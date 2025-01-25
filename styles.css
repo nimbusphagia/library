@@ -1,0 +1,74 @@
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    --book-color: #f9cdcd;
+    --secondary-color: #f9a7a7;
+}
+h1{
+    text-align: center;
+    font-size: 2.1em;
+}
+.navbar, .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.navbar div{
+    padding: 0 80px;
+}
+.book-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 10px;
+}
+.info-header, .book{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    text-align: center;
+}
+.info-header h3{
+    text-align: center;
+    color: rgb(33, 33, 33);
+
+}
+.book{
+    border: 1.5px solid black;
+    border-radius: 10px;
+    max-height: 70px;
+    box-shadow: 5px 5px 5px -5px;
+    background-color: var(--book-color);
+}
+.book p{
+    padding: 5px 0;
+}
+.add-tool{
+    height: 50px;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    padding: 5px 80px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px -5px;
+    font-size: 1.5em;
+    background-color: var(--book-color);
+}
+button:hover{
+    background-color: var(--secondary-color);
+}
+button:active{
+    box-shadow: none;
+    background-color: #ffffff;
+}
+
