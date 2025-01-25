@@ -33,24 +33,28 @@
                 <h3>Published</h3>
             </div>
             <div class="book">
-                <p>The bible</p>
-                <p>Jesus</p>
-                <p>0</p>
+                <p>Los Detectives Salvajes</p>
+                <p>Roberto Bolaño</p>
+                <p>1998</p>
             </div>
-            <div class="book">
-                <p>The bible</p>
-                <p>Jesus</p>
-                <p>0</p>
-            </div>
-            <div class="book">
-                <p>The bible</p>
-                <p>Jesus</p>
-                <p>0</p>
-            </div>
+
         </div>
         <div class="add-tool">
-            <button type="button">+</button>
+            <button class="add" type="button">+</button>
         </div>
+        <dialog>
+            <form method="get">
+                <h2>New Book</h2>
+                <label for="title">Book title:</label><input id="title" name="title" type="text" placeholder="Los Detectives Salvajes">
+                <label for="author">Author:</label><input id="author" name="author" type="text" placeholder="Roberto Bolaño">
+                <label for="year">Published:</label><input id="year" name="published" type="tel" minlength="1" maxlength="4" placeholder="1998">
+                <div class="btnContainer">
+                    <button class="send" type="submit">Add</button>
+                    <button class="close" type="button">Close</button>
+
+                </div>
+            </form>
+        </dialog>
     </main>
     <script src="./script.js"></script>
 </body>

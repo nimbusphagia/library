@@ -1,7 +1,7 @@
 body{
     font-family: Helvetica, Arial, sans-serif;
-    --book-color: #f9cdcd;
-    --secondary-color: #f9a7a7;
+    --book-color: #ffffff;
+    --secondary-color: #f8f8f8;
 }
 h1{
     text-align: center;
@@ -57,18 +57,60 @@ h1{
     justify-content: center;
     align-items: center;
 }
-button{
+.add{
     padding: 5px 80px;
     border-radius: 20px;
     box-shadow: 5px 5px 5px -5px;
     font-size: 1.5em;
     background-color: var(--book-color);
 }
-button:hover{
+.add:hover{
     background-color: var(--secondary-color);
 }
-button:active{
+.add:active{
     box-shadow: none;
     background-color: #ffffff;
+    color: black;
+}
+dialog{
+    border: 3px solid black;
+    box-shadow: 5px 5px 5px -5px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 80px 0 80px;
+}
+form label{
+    font-size: 1em;
+    font-weight: 500;
+}
+form input{
+    width: 160%;
+    height: 1.2em;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    font-style: italic;
+}
+form button{
+    text-align: center;
+    border-radius: 5px;
+    border: 1.2px solid black;
+    font-size: 1em;
+    padding: 2px 5px;
+    background-color: white;
+}
+form button:hover{
+    background-color: #eeeeee;
+}
+form button:active{
+    background-color: #dbdbdb;
+}
+.btnContainer{
+    padding: 40px 10px 20px 10px;
 }
 
