@@ -37,13 +37,8 @@ function newBookCell(newBook){
 }
 
 function displayLibrary(library){
-    if((library.length - 1) >= 0 && (library.length - 2) >= 0){
-        const newItem = library[library.length - 1];
-        const lastItem = library[library.length - 2];
-        if(lastItem !== newItem){
-            newBookCell(newItem);
-         }
-    } 
+    const newItem = library[library.length - 1];
+    newBookCell(newItem);
 }
 
 btnPrompt.addEventListener("click", ()=>{dialogAdd.showModal()});
@@ -67,7 +62,6 @@ function keepCount(){
 }
 
 //DELETE BOOK
-//let tracker = 1000;
 
 document.body.addEventListener("click", (e)=>{
     let tracker = "default";
