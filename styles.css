@@ -43,9 +43,27 @@ h1{
     max-height: 70px;
     box-shadow: 5px 5px 5px -5px;
     background-color: var(--book-color);
+    position: relative;
 }
 .book p{
     padding: 5px 0;
+    text-align: center;
+}
+.delete{
+    position: absolute;
+    right: 50px;
+    font-weight: 500;
+    text-align: center;
+    color: #424242;
+}
+.delete:hover{
+    font-size: 1.2em;
+    cursor: pointer;
+    color: rgb(49, 49, 49);
+}
+.delete:active{
+    color: #000000;
+    font-weight: 550;
 }
 .add-tool{
     height: 50px;
@@ -62,10 +80,11 @@ h1{
     border-radius: 20px;
     box-shadow: 5px 5px 5px -5px;
     font-size: 1.5em;
-    background-color: var(--book-color);
+    background-color: white;
 }
 .add:hover{
-    background-color: var(--secondary-color);
+    border: 2px solid black;
+    box-shadow: 7px 7px 7px -7px;
 }
 .add:active{
     box-shadow: none;
@@ -99,18 +118,32 @@ form input{
 form button{
     text-align: center;
     border-radius: 5px;
-    border: 1.2px solid black;
+    border: 1.5px solid black;
     font-size: 1em;
-    padding: 2px 5px;
+    padding: 2px 15px;
     background-color: white;
+    box-shadow: 2px 0px 2px -2px;
 }
 form button:hover{
-    background-color: #eeeeee;
+    background-color: #181818;
+    color:white;
 }
 form button:active{
-    background-color: #dbdbdb;
+    background-color: white;
+    color: #181818;
 }
 .btnContainer{
     padding: 40px 10px 20px 10px;
+}
+.close{
+    background-color: white;
+    border: transparent;
+    font-size: 1.3em;
+    position: absolute;
+    right: 1em;
+}
+.close:hover{
+    background-color: #363636;
+    color:white;
 }
 

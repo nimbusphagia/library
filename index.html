@@ -14,7 +14,7 @@
         <div class="navbar">
             <div class="info">
                 <h2>Book count:</h2>
-                <h2>0</h2>
+                <h2 class="counter">1</h2>
             </div>
             <div class="tool">
                 <label for="order-tool">Order by</label>
@@ -36,6 +36,7 @@
                 <p>Los Detectives Salvajes</p>
                 <p>Roberto Bolaño</p>
                 <p>1998</p>
+                <p class="delete" id="0">×</p>
             </div>
 
         </div>
@@ -43,15 +44,14 @@
             <button class="add" type="button">+</button>
         </div>
         <dialog>
+            <button class="close" type="button">×</button>
             <form method="get">
                 <h2>New Book</h2>
                 <label for="title">Book title:</label><input id="title" name="title" type="text" placeholder="Los Detectives Salvajes">
                 <label for="author">Author:</label><input id="author" name="author" type="text" placeholder="Roberto Bolaño">
                 <label for="year">Published:</label><input id="year" name="published" type="tel" minlength="1" maxlength="4" placeholder="1998">
                 <div class="btnContainer">
-                    <button class="send" type="submit">Add</button>
-                    <button class="close" type="button">Close</button>
-
+                    <button class="send" type="submit">Add</button>                   
                 </div>
             </form>
         </dialog>

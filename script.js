@@ -1,25 +1,17 @@
 //LIBRARY LOGIC
-const myLibrary = [
-    {title: "1q84", author: "Haruki Murakami", published: "2009"},
-    {title: "Sputnik Sweetheart", author: "Haruki Murakami", published: "1999"},
-];
+const myLibrary = [{title:"Los Detectives Salvajes", author:"Roberto Bolaño", published:"1998"}];
 
 function Book() {
 
 }
 
-function addBookToLibrary(title, author, published) {
-    let newBook = {
-        title: title,
-        author: author,
-        published: published
-    }
-    myLibrary.push(newBook);
-}
-console.log(addBookToLibrary("asd", "john", "1998"));
-
-//LIBRARY DISPLAY
+//LIBRARY DISPLAY FROM THE ARRAY
 const bookContainer = document.querySelector(".book-container");
+const dialogAdd = document.querySelector("dialog")
+const btnPrompt = document.querySelector(".add");
+const form = document.querySelector("form");
+const btnClose = document.querySelector(".close");
+const counter = document.querySelector(".counter");
 
 function newBookCell(newBook){
     const div = document.createElement("div");
@@ -29,22 +21,33 @@ function newBookCell(newBook){
     const title = document.createElement("p");
     const author = document.createElement("p");
     const published = document.createElement("p");
+    const btnDel = document.createElement("p");
+    btnDel.className = "delete";
 
     title.textContent = newBook.title;
     author.textContent = newBook.author;
     published.textContent = newBook.published;
+    btnDel.textContent = "×";
+    btnDel.id = myLibrary.length - 1;
 
     div.appendChild(title);
     div.appendChild(author);
     div.appendChild(published);
+    div.appendChild(btnDel);
 }
 
-const dialogAdd = document.querySelector("dialog")
-const btnAdd = document.querySelector(".add");
-const form = document.querySelector("form");
-const btnClose = document.querySelector(".close");
+function displayLibrary(library){
+    if((library.length - 1) >= 0 && (library.length - 2) >= 0){
+        const newItem = library[library.length - 1];
+        const lastItem = library[library.length - 2];
+        if(lastItem !== newItem){
+            newBookCell(newItem);
+         }
+    } 
+}
 
-btnAdd.addEventListener("click", ()=>{dialogAdd.showModal()});
+btnPrompt.addEventListener("click", ()=>{dialogAdd.showModal()});
+btnClose.addEventListener("click", ()=>{dialogAdd.close()});
 
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -54,12 +57,46 @@ form.addEventListener("submit", (e)=>{
         dialogAdd.close();
     } else{
         myLibrary.push(newBook);
-        newBookCell(newBook);
+        displayLibrary(myLibrary);
+        keepCount();
         dialogAdd.close();
     }
-    console.log(myLibrary);
 });
-btnClose.addEventListener("click", ()=>{dialogAdd.close()});
+function keepCount(){
+    counter.innerHTML = myLibrary.length;
+}
+
+//DELETE BOOK
+//let tracker = 1000;
+
+document.body.addEventListener("click", (e)=>{
+    let tracker = "default";
+    let bookArr = [];
+    if(e.target.className == "delete"){
+        tracker = e.target.id;
+        myLibrary.splice(e.target.id, 1);
+        e.target.parentElement.remove();
+        keepCount(myLibrary);
+        bookArr = Array.from(document.querySelectorAll(".delete"));
+        if(tracker !== "default"){
+            for(const del of bookArr){
+                if(del.id > tracker){
+                    del.id--;
+                    console.log(bookArr);
+                }
+            }
+        }
+    }
+})
+
+
+
+
+
+
+
+
+
 
 
 
