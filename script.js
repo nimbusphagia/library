@@ -1,9 +1,5 @@
-//LIBRARY LOGIC
+//LIBRARY 
 const myLibrary = [{title:"Los Detectives Salvajes", author:"Roberto Bolaño", published:"1998"}];
-
-function Book() {
-
-}
 
 //LIBRARY DISPLAY FROM THE ARRAY
 const bookContainer = document.querySelector(".book-container");
@@ -22,6 +18,8 @@ function newBookCell(newBook){
     const author = document.createElement("p");
     const published = document.createElement("p");
     const btnDel = document.createElement("p");
+    const btnRead = document.createElement("button");
+    btnRead.className = "read";
     btnDel.className = "delete";
 
     title.textContent = newBook.title;
@@ -34,13 +32,14 @@ function newBookCell(newBook){
     div.appendChild(author);
     div.appendChild(published);
     div.appendChild(btnDel);
+    div.appendChild(btnRead);
 }
 
 function displayLibrary(library){
     const newItem = library[library.length - 1];
     newBookCell(newItem);
 }
-
+//ADD BOOK
 btnPrompt.addEventListener("click", ()=>{dialogAdd.showModal()});
 btnClose.addEventListener("click", ()=>{dialogAdd.close()});
 
@@ -57,6 +56,8 @@ form.addEventListener("submit", (e)=>{
         dialogAdd.close();
     }
 });
+
+//COUNT
 function keepCount(){
     counter.innerHTML = myLibrary.length;
 }
@@ -82,7 +83,23 @@ document.body.addEventListener("click", (e)=>{
         }
     }
 })
+//READ TOGGLE
 
+document.body.addEventListener("click", (e)=>{
+    if(e.target.className == "read"){
+        let idTrack = e.target.parentElement.querySelector(".delete");
+        if(myLibrary[idTrack.id].read == true){
+            myLibrary[idTrack.id].read = false;
+            e.target.style.background = "url(./icons/book_4_spark_24dp_999999_FILL0_wght400_GRAD0_opsz24.svg)";
+            e.target.setAttribute("title", "Mark as read");
+        } else{
+            e.target.style.background = "url(././icons/off1.svg)";
+            myLibrary[idTrack.id].read = true;
+            e.target.setAttribute("title", "Mark as unread");
+        }
+        console.log(myLibrary[idTrack.id]);
+    }
+})
 
 
 

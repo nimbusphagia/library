@@ -17,10 +17,10 @@
                 <h2 class="counter">1</h2>
             </div>
             <div class="tool">
-                <label for="order-tool">Order by</label>
+                <label for="order-tool">Sort by</label>
                 <select name="order-tool" id="order-tool">
-                    <option value="last-added">Last Added</option>
-                    <option value="last-published">Last Published</option>
+                    <option class="added" value="last-added">Last Added</option>
+                    <option class="published" value="last-published">Last Published</option>
                 </select>
             </div>
         </div>
@@ -33,6 +33,7 @@
                 <h3>Published</h3>
             </div>
             <div class="book">
+                <button id="read" class="read" type="button" title="Mark as read"></button>
                 <p>Los Detectives Salvajes</p>
                 <p>Roberto Bolaño</p>
                 <p>1998</p>
