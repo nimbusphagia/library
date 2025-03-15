@@ -32,27 +32,28 @@
                 <h3>Author</h3>
                 <h3>Published</h3>
             </div>
+            <!--
             <div class="book">
-                <button id="read" class="read" type="button" title="Mark as read"></button>
+                <button id="unread" class="read" type="button" title="Mark as read"></button>
                 <p>Los Detectives Salvajes</p>
                 <p>Roberto Bolaño</p>
                 <p>1998</p>
                 <p class="delete" id="0">×</p>
             </div>
-
+            -->
         </div>
         <div class="add-tool">
             <button class="add" type="button">+</button>
         </div>
         <dialog>
             <button class="close" type="button">×</button>
-            <form method="get">
+            <form method="dialog">
                 <h2>New Book</h2>
                 <label for="title">Book title:</label><input id="title" name="title" type="text" placeholder="Los Detectives Salvajes">
                 <label for="author">Author:</label><input id="author" name="author" type="text" placeholder="Roberto Bolaño">
                 <label for="year">Published:</label><input id="year" name="published" type="tel" minlength="1" maxlength="4" placeholder="1998">
                 <div class="btnContainer">
-                    <button class="send" type="submit">Add</button>                   
+                    <button class="send" type="button">Add</button>                   
                 </div>
             </form>
         </dialog>
